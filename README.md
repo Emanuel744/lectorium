@@ -1035,7 +1035,10 @@
         'Ciencias Sociales'
       ].filter(item => item.toLowerCase().includes(query.toLowerCase()));
 
-      if (suggestions.length === 0) return;
+      if (suggestions.length === 0) {
+        hideSuggestions();
+        return;
+      }
 
       // Create suggestions dropdown
       const existingDropdown = document.getElementById('search-suggestions');
